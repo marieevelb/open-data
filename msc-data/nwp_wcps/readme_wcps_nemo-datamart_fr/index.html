@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Readme radar geomet en - MSC Open Data / Données ouvertes du SMC</title>
+        <title>Readme wcps nemo datamart fr - MSC Open Data / Données ouvertes du SMC</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -88,100 +88,106 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#weather-radar-data-available-on-msc-geomet">Weather radar data available on MSC GeoMet</a></li>
-            <li><a href="#access-to-the-geospatial-web-services">Access to the geospatial web services</a></li>
-            <li><a href="#usage">Usage</a></li>
+        <li class="main active"><a href="#donnees-nemo-du-systeme-de-prevision-du-cycle-de-leau-spce-en-format-netcdf-sur-les-grands-lacs-et-le-fleuve-saint-laurent">Données NEMO du système de prévision du cycle de l’eau (SPCE) en format NetCDF sur les Grands Lacs et le fleuve Saint-Laurent</a></li>
+            <li><a href="#adresse-des-donnees">Adresse des données</a></li>
+            <li><a href="#specification-technique-de-la-grille">Spécification technique de la grille</a></li>
+            <li><a href="#nomenclature-des-noms-de-fichiers">Nomenclature des noms de fichiers</a></li>
+            <li><a href="#liste-des-variables">Liste des variables</a></li>
             <li><a href="#support">Support</a></li>
-            <li><a href="#announcement-mailing-list">Announcement mailing list</a></li>
+            <li><a href="#annonces-de-la-liste-de-diffusion-dd_info">Annonces de la liste de diffusion dd_info</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p><a href="../readme_radar_geomet_fr/">En français</a></p>
+<p><a href="../readme_wcps_nemo-datamart_en/">In English</a></p>
 <p><img alt="ECCC logo" src="../../../img_eccc-logo.png" /></p>
-<p><a href="../../../readme_en/">TOC</a> &gt; <a href="../../readme_en/">MSC data</a> &gt; <a href="../readme_radar_en/">Radar</a> &gt; Radar data on MSC GeoMet</p>
-<h1 id="weather-radar-data-available-on-msc-geomet">Weather radar data available on MSC GeoMet</h1>
-<p>MSC GeoMet provides access to several popular North American weather radar composite layers. Users can build mobile apps, create interactive web maps, or display and animate weather radar layers in desktop software.</p>
-<h2 id="access-to-the-geospatial-web-services">Access to the geospatial web services</h2>
-<p>The weather radar layers are available on GeoMet-Weather via the Web Map Service (WMS) standard:</p>
+<p><a href="../../../readme_fr/">TdM</a> &gt; <a href="../../readme_fr/">Données du SMC</a> &gt; <a href="../readme_wcps_fr/">SPCE</a> &gt; SPCE-NEMO sur le Datamart du SMC</p>
+<h1 id="donnees-nemo-du-systeme-de-prevision-du-cycle-de-leau-spce-en-format-netcdf-sur-les-grands-lacs-et-le-fleuve-saint-laurent">Données NEMO du système de prévision du cycle de l’eau (SPCE) en format NetCDF sur les Grands Lacs et le fleuve Saint-Laurent</h1>
+<p>Le modèle océan-glace, NEMO-CICE, du SPCE, produit des prévisions horaires. Ces données sont disponibles au format NetCDF sur une grille lat-lon correspondant à une résolution de 1 km (0,009 x 0,009 degrés).</p>
+<h2 id="adresse-des-donnees">Adresse des données</h2>
+<p>Les données du Datamart du SMC peuvent être <a href="../../../msc-datamart/amqp_fr/">automatiquement récupérées avec le Protocole avancé de mise en file d'attente des messages (AMQP)</a> dès qu'elles deviennent disponibles. Un <a href="../../../usage/readme_fr/">survol et exemples pour accéder et utiliser les données ouvertes du Service météorologique du Canada</a> est également disponible.</p>
+<p>Les données sont disponibles via le protocole HTTP. Il est possible d’y accéder avec un fureteur standard. Dans ce cas, on obtient une liste de liens donnant accès à un fichier netCDF. Nous vous recommandons d’automatiser le téléchargement en le scriptant avec wget (lien externe, anglais) ou un programme équivalent. Pour plus d’information sur wget, consultez les notes d’utilisation.</p>
+<p>Les données sont accessibles à l'adresse suivante :</p>
 <ul>
-<li><a href="../../../msc-geomet/readme_en/">Access to GeoMet-Weather</a></li>
-<li><a href="../../../msc-geomet/web-services_en/">Technical documentation on MSC GeoMet geospatial web services</a></li>
+<li><a href="https://dd.meteo.gc.ca/model_wcps/nemo/netcdf/lat_lon">https://dd.meteo.gc.ca/model_wcps/nemo/netcdf/lat_lon/{nd}/{HH}/{hhh}/</a>                  </li>
 </ul>
-<p>Example of a web map configured to display the weather radar composite using WMS layers served by MSC GeoMet:</p>
-<div id="map" style="height: 400px;"></div>
-
-<div id="controller" role="group" aria-label="Animation controls" style="background: #ececec; padding: 0.5rem;">
-  <button id="play" class="btn btn-primary btn-sm" type="button"><i class="fa fa-play" style="padding: 0rem 1rem"></i></button>
-  <button id="pause" class="btn btn-primary btn-sm" type="button"><i class="fa fa-pause" style="padding: 0rem 1rem"></i></button>
-  <span id="info" style="padding-left: 0.5rem;"></span>
-</div>
-
-<p>MSC GeoMet's North American weather radar composite layers can be seen in action in ECCC's <a href="https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/weathercan.html">WeatherCAN mobile app</a>.</p>
-<h2 id="usage">Usage</h2>
-<p>The <a href="../../../usage/readme_en/">usage overview page</a> provides generic information on using these services with desktop software, mobile apps, interactive web maps and direct access. Please refer to the <a href="../../../msc-geomet/web-services_en/">technical documentation on MSC GeoMet geospatial web services</a> for detailed information. See also the <a href="../readme_radar_en/">main weather radar data page</a> which links to additional information on weather radar.</p>
-<h3 id="available-layers">Available layers</h3>
-<p>Weather radar layers are updated every 10 minutes. The last 3 hours of data is available on MSC GeoMet. </p>
-<p>North-American weather radar composite at 1 km:</p>
+<p>où :</p>
 <ul>
-<li>Radar precipitation rate (Rain) (1 km) [mm/hr], ID: <code>RADAR_1KM_RRAI</code></li>
-<li>Radar precipitation rate (Snow) (1 km) [cm/hr], ID: <code>RADAR_1KM_RSNO</code></li>
-<li>Radar reflectivity (Rain) (1 km) [dBZ], ID: <code>RADAR_1KM_RDBR</code></li>
-<li>Corresponding dynamic radar coverage layers:<ul>
-<li>Coverage for Rain, ID: <code>RADAR_COVERAGE_RRAI</code>. ID for inverted style: <code>RADAR_COVERAGE_RRAI.INV</code></li>
-<li>Coverage for Snow, ID: <code>RADAR_COVERAGE_RSNO</code>. ID for inverted style: <code>RADAR_COVERAGE_RSNO.INV</code></li>
+<li><strong>nd</strong> : Dimension spatiale, latitude et longitude [2d]</li>
+<li><strong>HH</strong> : Heure en UTC du début de la simulation [00,12]</li>
+<li><strong>hhh</strong> : Heure de la prévision [001, ..., 084] </li>
 </ul>
-</li>
-</ul>
-<p>North-American weather radar composite at 4 km:</p>
+<p>Un historique de 30 jours de prévision est stocké dans ce répertoire.</p>
+<h2 id="specification-technique-de-la-grille">Spécification technique de la grille</h2>
+<p><img alt="Image du domaine SPCE-NEMO" src="https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/nwp_wcps/grille_wcps_nemo.png" /></p>
+<p>Dans le domaine complet indiqué en blanc, le domaine de données valide, qui couvre les lacs, est en couleur. </p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ni</td>
+<td>1681</td>
+</tr>
+<tr>
+<td>nj</td>
+<td>3181</td>
+</tr>
+<tr>
+<td>résolution à 45° N</td>
+<td>1km</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nomenclature-des-noms-de-fichiers">Nomenclature des noms de fichiers</h2>
+<p>NOTE: TOUTES LES HEURES SONT EN UTC.</p>
+<p>La nomenclature des noms des fichiers est la suivante :</p>
+<p>CMC_wcps_nemo_Variable_TypedeNiveau_Niveau_ProjectionResolution_YYYYMMDDHH_Phhh.nc</p>
+<p>où :</p>
 <ul>
-<li>Radar precipitation rate (Rain) (4 km) [mm/hr], ID: <code>RADAR_RRAI</code></li>
-<li>Radar precipitation rate (Snow) (4 km) [cm/hr], ID: <code>RADAR_RSNO</code></li>
-<li>Radar reflectivity (Rain) (4 km) [dBZ], ID: <code>RADAR_RDBR</code></li>
-<li>Radar reflectivity (Snow) (4 km) [dBZ], ID: <code>RADAR_RDBS</code></li>
+<li><strong>CMC</strong> : Chaîne de caractères constante indiquant que le Centre météorologique canadien (CMC) émet les prévisions</li>
+<li><strong>wcps_nemo</strong> : Chaîne de caractères constante indiquant le système de prévision qui génère les données</li>
+<li><strong>Variable</strong> : Nom de la variable contenue dans le fichier</li>
+<li><strong>TypedeNiveau</strong> : Type de niveau [sfc, depth, tgl]</li>
+<li><strong>Niveau</strong> : Valeur du niveau, soit 0 pour sfc (surface), 0.5 pour la profondeur (profondeur des lacs en mètres), 40 pour l'altitude (l'altitude en mètres)</li>
+<li><strong>Projection</strong> : Projection cartographique [latlon]</li>
+<li><strong>Résolution</strong> : 0.009x0.009. Signifie une résolution de 0.009°(environ 1km) dans les directions longitudinale et latitudinale</li>
+<li><strong>YYYYMMDD</strong> : Année, mois et jour du début de la prévision</li>
+<li><strong>HH</strong> : Heure en UTC du début de la simulation [00,12]</li>
+<li><strong>Phhh</strong> : P caractère constant, hhh l'heure de prévision [001, ..., 084] </li>
+<li><strong>nc</strong> : Chaîne de caractères constante indiquant le format NetCDF</li>
 </ul>
-<h3 id="usage-tips">Usage tips</h3>
-<p>Retrieving the list of latest radar layer timesteps available:</p>
+<p>Exemple :</p>
 <ul>
-<li>Users can use <code>&amp;layer=</code> in WMS GetCapabilities requests to point to a specific layer and retrieve a smaller XML payload with up-to-date temporal dimensions. Example for the 1km radar snow layer: <a href="https://geo.weather.gc.ca/geomet?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities&amp;layer=RADAR_1KM_RSNO">https://geo.weather.gc.ca/geomet?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities&amp;layer=RADAR_1KM_RSNO</a></li>
-<li>Additional information is available in the <a href="../../../msc-geomet/web-services_en#handling-time">handling time with WMS section</a></li>
+<li>CMC_wcps_nemo_vomecrty_depth_0.5_latlon0.009x0.009_2019011100_P036.nc</li>
 </ul>
-<p>WMS styles:</p>
+<h2 id="liste-des-variables">Liste des variables</h2>
+<p>Liste des variables 2D disponibles dans les fichiers:</p>
 <ul>
-<li>In addition to the default WMS style, several alternative WMS styles with different color scales are available. The list of available WMS styles is provided in the WMS GetCapabilities response</li>
-<li>Furthermore, users can request layers with their own custom styles with the Styled Layer Descriptor (SLD) standard, please refer to the <a href="../../../msc-geomet/web-services_en#handling-styles">SLD technical documentation</a></li>
+<li><strong>tairsurf</strong> : Température de l'air à environ 40 mètres en altitude</li>
+<li><strong>uwindsurf</strong> : Composante X de la vitesse du vent à 40 mètres en altitude</li>
+<li><strong>vwindsurf</strong> : Composante Y de la vitesse du vent à 40 mètres en altitude</li>
+<li><strong>vozocrtx</strong> : Composante X de la vitesse de l'eau au premier niveau du modèle </li>
+<li><strong>vomecrty</strong> : Composante Y de la vitesse de l'eau au premier niveau du modèle</li>
+<li><strong>votemper</strong> : Température potentielle de l'eau de mer au premier niveau du modèle</li>
+<li><strong>vosaline</strong> : Salinité de l'eau de mer </li>
+<li><strong>sossheig</strong> : Hauteur de la surface de la mer par rapport au géoïde</li>
+<li><strong>sokaraml</strong> : Profondeur de la couche de mélange d'après le critère de densité</li>
+<li><strong>iiceconc</strong> : Fraction de la glace de mer</li>
+<li><strong>iicevol</strong> : Volume de glace de mer par unité de surface de cellule de grille</li>
+<li><strong>itzocrtx</strong> : Composante X de la vitesse de la glace de mer</li>
+<li><strong>itmecrty</strong> : Composante Y de la vitesse de la glace de mer</li>
+<li><strong>iicepressure</strong> : Pression interne de la glace, intégrée verticalement</li>
+<li><strong>iicestrength</strong> : Résistance à la compression de la glace, intégrée verticalement</li>
 </ul>
-<p>Legends:</p>
-<ul>
-<li>Legends are available for every WMS style. Details are provided in <a href="../../../msc-geomet/web-services_en#wms-getlegendgraphic">the WMS legend technical documentation</a></li>
-<li>Legend retrieval request example: <code>https://geo.weather.gc.ca/geomet?version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=RADAR_1KM_RRAI&amp;format=image/png&amp;STYLE=RADARURPPRECIPR14-LINEAR</code></li>
-</ul>
-<p><img alt="The RADARURPPRECIPR14-LINEAR WMS legend" src="https://geo.weather.gc.ca/geomet?version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=RADAR_1KM_RRAI&amp;format=image/png&amp;STYLE=RADARURPPRECIPR14-LINEAR" /></p>
 <h2 id="support">Support</h2>
-<p>The MSC GeoMet services are operational 24/7. User support is provided on a best-effort basis during normal business hours. If you have any questions about these services, please <a href="https://weather.gc.ca/mainmenu/contact_us_e.html">contact us</a>.</p>
-<h2 id="announcement-mailing-list">Announcement mailing list</h2>
-<p>We encourage users to subscribe to the <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/geomet-info">GeoMet-Info</a> announcement mailing list to be informed of enhancements and changes to the MSC GeoMet services.</p>
-<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" integrity="sha256-rQq4Fxpq3LlPQ8yP11i6Z2lAo82b6ACDgd35CKyNEBw=" crossorigin="anonymous" />
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js" integrity="sha256-77IKwU93jwIX7zmgEBfYGHcmeO0Fx2MoWB/ooh9QkBA=" crossorigin="anonymous"></script>
-<script>
-    function isIE() {
-      return window.navigator.userAgent.match(/(MSIE|Trident)/);
-    }
-    var head = document.getElementsByTagName('head')[0];
-    var js = document.createElement("script");
-    js.type = "text/javascript";
-    if (isIE())
-    {
-        js.src = "../../../js/radar_ie.js";
-        document.getElementById("controller").setAttribute("hidden", true);
-    }
-    else
-    {
-        js.src = "../../../js/radar.js";
-    }
-    head.appendChild(js);
-</script></p></div>
+<p>Pour toute question relative à ces données, merci de nous contacter à l'adresse : <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
+<h2 id="annonces-de-la-liste-de-diffusion-dd_info">Annonces de la liste de diffusion dd_info</h2>
+<p>Les annonces reliées à ce jeu de données sont disponibles via la liste <a href="https://lists.ec.gc.ca/cgi-bin/mailman/listinfo/dd_info">dd_info</a>.</p></div>
         </div>
 
         <footer class="col-md-12">
