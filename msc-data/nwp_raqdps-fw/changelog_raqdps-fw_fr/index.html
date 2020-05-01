@@ -8,14 +8,14 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Changelog raqdps fw fr - MSC Open Data / <br>Données ouvertes du SMC</title>
+        <title>Changelog raqdps fw fr - MSC Open Data / Données ouvertes du SMC</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <link href="../../../css/extra.css" rel="stylesheet">
 
-        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/jquery-3.5.0.min.js" defer></script>
         <script src="../../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
@@ -63,11 +63,11 @@
 </li>
                                     
 <li>
-    <a href="../../../usage/tutorial_web-maps_en/" class="dropdown-item">Create interactive web maps /<br>Créer des cartes web interactives</a>
+    <a href="../../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
 </li>
                                     
 <li>
-    <a href="../../../usage/tutorial_WMS_QGIS_en/" class="dropdown-item">Display and animate data in QGIS /<br>Afficher et animer des couches dans QGIS</a>
+    <a href="../../../usage/tutorial_web-maps_en/" class="dropdown-item">Create interactive web maps /<br>Créer des cartes web interactives</a>
 </li>
                                     
 <li>
@@ -134,6 +134,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#le-mardi-18-septembre-2018_1" class="nav-link">Le mardi 18 septembre, 2018</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#le-mercredi-7-septembre-2016" class="nav-link">Le mercredi 7 septembre 2016</a>
               <ul class="nav flex-column">
               </ul>
@@ -154,7 +158,7 @@
 <p><a href="../../../readme_fr/">TdM</a> &gt; <a href="../../readme_fr/">Données du SMC</a> &gt; <a href="../readme_raqdps-fw_fr/">SRPDQA-FW</a> &gt; Changements au Système régional de prévision déterministe de la qualité de l'air FireWork</p>
 <h1 id="chronologie-des-changements-apportes-au-systeme-regional-de-prevision-deterministe-de-la-qualite-de-lair-firework-srpdqa-fw">Chronologie des changements apportés au Système régional de prévision déterministe de la qualité de l'air FireWork (SRPDQA-FW)</h1>
 <h2 id="le-mardi-21-janvier-2020">Le mardi 21 janvier 2020</h2>
-<h3 id="mise-a-jours-de-firework-suite-a-la-nouvelle-infrastructure-de-calcul-haute-performance">Mise à jours de FireWork suite à la nouvelle infrastructure de calcul haute performance.</h3>
+<h3 id="mise-a-jour-de-firework-suite-a-la-nouvelle-infrastructure-de-calcul-haute-performance">Mise à jour de FireWork suite à la nouvelle infrastructure de calcul haute performance.</h3>
 <p>Voir les détails via <a href="../../changelog_multisystems_fr/">ce lien</a>.</p>
 <h2 id="le-mercredi-3-juillet-2019">Le mercredi 3 juillet 2019</h2>
 <h3 id="mise-a-jour-du-systeme-regional-de-prevision-deterministe-de-la-qualite-de-lair-firework">Mise à jour du système régional de prévision déterministe de la qualité de l'air FireWork</h3>
@@ -190,6 +194,17 @@
 <p>Le mardi 3 avril 2018, à compter de la passe de 1200 UTC, le Centre météorologique canadien (CMC) du Service météorologique du Canada (SMC) mettra en œuvre le système de prévision FireWork pour la saison d'été 2018. FireWork est un système de prévision saisonnier qui est basé sur le système régionale de prévision déterministe de la qualité de l'air (SRPDQA) et qui incorpore des émissions provenant des feux de forêts en Amérique du Nord.</p>
 <p>Pour plus d'information, s'il vous plait consulter la note officielle annonçant l'implantation du FireWork pour l'été 2018 <a href="https://dd.meteo.gc.ca/doc/genots/2018/04/03/NOCN03_CWAO_031838___00001">en cliquant ici</a>.</p>
 <p>Une note technique avec plus de détails est disponible <a href="https://collaboration.cmc.ec.gc.ca/cmc/CMOI/product_guide/docs/tech_notes/technote_raqdps015fw_20160428_f.pdf">via ce lien</a>.</p>
+<h2 id="le-mardi-18-septembre-2018_1">Le mardi 18 septembre, 2018</h2>
+<h3 id="mise-a-jour-du-systeme-de-prevision-firework">Mise à jour du  système de prévision FireWork</h3>
+<p>Le mardi 18 septembre 2018, à compter de la passe de 1200 UTC, le Centre météorologique canadien (CMC) mettra à jour le système régional de prévision déterministe de la qualité de l'air (SRPDQA) et le système complémentaire FireWork en remplaçant la version 019 par la version 020.</p>
+<p>Résumé des éléments que comporte cette mise à jour :</p>
+<ul>
+<li>Les analyses météorologiques et le modèle pilote proviennent maintenant du SRPD v6.0.0 plutôt que du SRPD v5.1.0.</li>
+<li>Adoption de la configuration SRPD v6.0.0, comprenant le recyclage des principales variables physiques et l'approche incrémentale 4D de mise à jour de l'analyse (IAU:Incremental Analysis Update).</li>
+<li>L'implementation de la nouvelle version du code du modèle (v2.3.1), pour améliorer la vitesse de traitement et augmenter la robustesse, ainsi que l'amélioration de la chimie (dépôt sec en phase gazeuse sur les surfaces enneigées et la glace marine).</li>
+<li>Introduction d’un nouvel ensemble d'émissions basé sur des inventaires nationaux d’émissions plus récents.</li>
+</ul>
+<p>La note officielle annonçant ce changement est disponible <a href="https://dd.meteo.gc.ca/doc/genots/2018/09/17/NOCN03_CWAO_171403___42412">en cliquant ici</a>.</p>
 <h2 id="le-mercredi-7-septembre-2016">Le mercredi 7 septembre 2016</h2>
 <h3 id="mise-a-jour-majeure-du-systeme-de-prevision-firework">Mise à jour majeure du système de prévision FireWork</h3>
 <p>Le mercredi 7 septembre 2016, à compter de la passe de 1200 UTC, le Centre météorologique canadien (CMC) mettra à jour le système de prévision FireWork. FireWork est un système de prévision saisonnier qui est basé sur le système régional de prévision déterministe de la qualité de l'air (SRPDQA) qui incorpore des émissions provenant des feux de forêts en Amérique du Nord. Il est en fonction durant la saison des feux de forêts en Amérique du Nord, qui se termine normalement à la fin du mois d'octobre.</p>
