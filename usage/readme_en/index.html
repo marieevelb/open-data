@@ -75,6 +75,10 @@
 </li>
                                     
 <li>
+    <a href="../use-case_arthur/use-case_arthur_en/" class="dropdown-item">API usage from a Python script /<br>Utiliser l'API dans un script Python</a>
+</li>
+                                    
+<li>
     <a href="../tutorial_OAFeat_QGIS_en/" class="dropdown-item">Use OGC API Features in QGIS /<br>Utiliser OGC API Features dans QGIS</a>
 </li>
                                     
@@ -223,8 +227,12 @@
 <h2 id="how-to-access-raw-data">How to access raw data</h2>
 <h3 id="raw-data-download">Raw data download</h3>
 <p>MSC raw data can be <a href="../../msc-datamart/amqp_en/">automatically retrieved as soon as it becomes available through the Advanced Message Queuing Protocol (AMQP)</a>.</p>
-<p>The raw data can also be directly downloaded from the web on the <a href="../../msc-datamart/readme_en/">MSC Datamart</a> data repository.</p>
+<p>The raw data can also be directly downloaded on the web from the <a href="../../msc-datamart/readme_en/">MSC Datamart</a> data repository.</p>
 <h3 id="raw-data-web-services">Raw data web services</h3>
+<p>The following use case example is provided:</p>
+<ul>
+<li><a href="/use-case_arthur/use-case_arthur_en/">Use the API to directly access raw data from a Python script</a>: Arthur &amp; profits based on probability of precipitation</li>
+</ul>
 <p>Raw MSC data can be retrieved from the <a href="../../msc-geomet/readme_en/">MSC GeoMet web services</a>. These web services allow users to retrieve raw data by specifying the geographic coordinates, the cartographic projection, the temporal dimensions and choose amongst available data formats. Details on the available parameters are provided in the <a href="../../msc-geomet/web-services_en/">web services</a> section of the technical documentation.</p>
 <p>Raw data at specific geographic locations can be retrieved with a Web Map Service (WMS) GetFeatureInfo request. Details are provided <a href="../../msc-geomet/web-services_en/#wms-getfeatureinfo">in the technical documentation</a>. Example of a <a href="https://geo.weather.gc.ca/geomet/?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetFeatureInfo&amp;QUERY_LAYERS=GDPS.ETA_TT&amp;INFO_FORMAT=text/plain&amp;i=5&amp;j=5&amp;EXCEPTIONS=xml&amp;LAYERS=GDPS.ETA_TT&amp;CRS=EPSG:4326&amp;BBOX=45.50,-73.56,45.51,-73.55&amp;WIDTH=10&amp;HEIGHT=10">WMS GetFeatureInfo request for temperature from the Global Deterministic Prediction System (GDPS) model over Montreal, Canada</a>.</p>
 <p>Raw data for vector data can be retrieved with a OGC API - Features (WFS 3) request. Example of a <a href="https://geo.weather.gc.ca/geomet/features/collections/hydrometric-daily-mean/items?STATION_NUMBER=05PF049">WFS 3 query for the Winnipeg River hydrometric station daily means</a> which returns the corresponding data as a GeoJSON file.</p>
