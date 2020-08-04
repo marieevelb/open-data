@@ -179,11 +179,11 @@
 <tbody>
 <tr>
 <td>ni</td>
-<td>XXXX</td>
+<td>729</td>
 </tr>
 <tr>
 <td>nj</td>
-<td>XXXX</td>
+<td>599</td>
 </tr>
 <tr>
 <td>résolution à 60° N</td>
@@ -191,16 +191,16 @@
 </tr>
 <tr>
 <td>coordonnées du premier point de grille (relatives à la grille utilisée)</td>
-<td>° N ; ° W</td>
+<td>32 ° S ; 39.5 ° W</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note</strong> : Les <a href="https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/update_2.0.8.html">versions les plus récentes de wgrib2</a> supportent ces grilles tournées. Il en sera de même avec <a href="https://gdal.org/">GDAL</a> au printemps 2020.</p>
+<p><strong>Note</strong> : Les <a href="https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/update_2.0.8.html">versions les plus récentes de wgrib2</a> et <a href="https://gdal.org/">GDAL</a> supportent ces grilles tournées. </p>
 <h2 id="nomenclature-des-noms-de-fichiers">Nomenclature des noms de fichiers</h2>
 <p>NOTE: TOUTES LES HEURES SONT EN UTC.</p>
 <p>La nomenclature des noms des fichiers est la suivante :</p>
 <ul>
-<li>{YYYYMMDD}T{HH}Z_MSC_RAQDPS-FW_{VAR}<em>{TYPENIVEAU}</em>{Grille}(resolution}_P{hhh}.grib2</li>
+<li>{YYYYMMDD}T{HH}Z_MSC_RAQDPS-FW_VAR_LVL_{Grille}(resolution}_P{hhh}.grib2</li>
 </ul>
 <p>où :</p>
 <ul>
@@ -211,8 +211,8 @@
 <li><strong>MSC</strong> : Chaîne de caractères constante pour Meteorological Service of Canada, la source des données </li>
 <li><strong>RAQDPS-FW</strong> : Chaîne de caractères constante indiquant que les données proviennent du Système régional de prévision déterministe de la qualité de l’air FireWork</li>
 <li><strong>VAR</strong> : Type de variable contenu dans le fichier (ex. : PM2.5-Diff-RAQDPS)</li>
-<li><strong>TYPENIVEAU</strong> : Type de niveau [SFC pour la surface, EATM pour l’intégrale de la colonne]</li>
-<li><strong>Grille</strong> : Grille horizontale [RLatLon] </li>
+<li><strong>LVL</strong> : Niveau vertical [SFC pour la surface, EATM pour l’intégrale de la colonne]</li>
+<li><strong>Grille</strong> : Grille horizontale lat-lon tournée [RLatLon] </li>
 <li><strong>resolution</strong> : 0.09x0.09. Signifie une résolution de 0.09°(environ 10km) dans les directions longitudinale et latitudinale</li>
 <li><strong>Phhh</strong> : « P » est un caractère constant. « hhh » représente l’heure de prévision [000, 001, 002, ..., 072]</li>
 <li><strong>grib2</strong> : Chaîne de caractères constante indiquant que le format est GRIB2</li>
@@ -224,10 +224,10 @@
 <h2 id="liste-des-variables">Liste des variables</h2>
 <p>Liste des variables 2D disponibles dans les fichiers:</p>
 <ul>
-<li>PM2.5 : Concentration des PM2.5 </li>
-<li>PM2.5-Diff-RAQDPS : Différence de concentration des PM2.5 avec le modèle SRPDQA. Indique la contribution des feux de forêt à la concentration des PM2.5</li>
-<li>PM10 : Concentration des PM10</li>
-<li>PM10-Diff-RAQDPS : Différence de concentration des PM10 avec le modèle SRPDQA. Indique la contribution des feux de forêt à la concentration des PM10</li>
+<li>PM2.5 : Concentration des PM2.5 (&mu;g.m-3)</li>
+<li>PM2.5-Diff-RAQDPS : Différence de concentration des PM2.5 (&mu;g.m-3) avec le modèle SRPDQA. Indique la contribution des feux de forêt à la concentration des PM2.5</li>
+<li>PM10 : Concentration des PM10 (&mu;g.m-3)</li>
+<li>PM10-Diff-RAQDPS : Différence de concentration des PM10 (&mu;g.m-3) avec le modèle SRPDQA. Indique la contribution des feux de forêt à la concentration des PM10</li>
 </ul>
 <h2 id="support">Support</h2>
 <p>Pour toute question relative à ces données, merci de nous contacter à l'adresse : <a href="mailto:ec.dps-client.ec@canada.ca">ec.dps-client.ec@canada.ca</a></p>
